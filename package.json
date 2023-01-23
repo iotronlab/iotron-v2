@@ -9,5 +9,15 @@
   },
   "devDependencies": {
     "nuxt": "^3.0.0"
+  },
+  "overrides": {
+    "vue": "latest"
+  },
+  "dependencies": {
+    "@mdi/js": "^7.1.96",
+    "@nuxtjs/google-fonts": "^3.0.0-1",
+    "sass": "^1.57.1",
+    "vite-plugin-vuetify": "^1.0.1",
+    "vuetify": "^3.1.1"
   }
 }
