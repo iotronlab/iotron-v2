@@ -19,15 +19,13 @@ export default defineNuxtConfig({
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
   },
-  css: [],
+  css: ['/assets/styles.css'],
   modules: [
     "@nuxtjs/google-fonts",
     async (options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) =>
         config.plugins.push(
-          vuetify({
-            styles: { configFile: "assets/css/settings.scss" },
-          })
+          vuetify()
           // {
           // styles: { configFile: 'assets/css/settings.scss' },
           // }
@@ -71,7 +69,7 @@ export default defineNuxtConfig({
   },
 
   build: {
-    transpile: ['vuetify'],
+    transpile: ['vuetify','gsap'],
     // analyze: {
     //   analyzerMode: 'static',
     // },

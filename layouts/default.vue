@@ -1,7 +1,13 @@
 <template>
-    <div>
-        <h3>hello</h3>
-    </div>
+   <v-app>
+    <div><h3>hello world</h3></div>
+    <v-main>
+        <slot/>
+    </v-main>
+
+   </v-app>
+
+
 </template>
 
 <script>
