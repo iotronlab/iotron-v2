@@ -1,6 +1,25 @@
 import { createVuetify } from "vuetify";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
-import {} from "@mdi/js";
+import {
+  mdiAccount,
+  mdiMapMarkerRadius,
+  mdiCircleDouble,
+  mdiMagnify,
+  mdiEmail,
+  mdiMapMarkerStar,
+  mdiCalendarHeart,
+  mdiFilter,
+  mdiMenuDown,
+  mdiArrowRight,
+  mdiArrowLeft,
+  mdiStarFourPoints,
+  mdiStarFourPointsOutline,
+  mdiYoutube,
+  mdiPhone,
+  mdiInstagram,
+  mdiFacebook,
+  mdiGoogle
+} from "@mdi/js";
 
 import "vuetify/styles";
 
@@ -32,6 +51,24 @@ export default defineNuxtPlugin((nuxtApp) => {
       defaultSet: "mdi",
       aliases: {
         ...aliases,
+        account: mdiAccount,
+        location: mdiMapMarkerRadius,
+        online: mdiCircleDouble,
+        search: mdiMagnify,
+        email: mdiEmail,
+        phone: mdiPhone,
+        location: mdiMapMarkerStar,
+        calender: mdiCalendarHeart,
+        filter: mdiFilter,
+        dropdownIcon: mdiMenuDown,
+        nextArrow: mdiArrowRight,
+        prevArrow: mdiArrowLeft,
+        subscribed: mdiStarFourPoints,
+        subscribe: mdiStarFourPointsOutline,
+        youtube: mdiYoutube,
+        instagram: mdiInstagram,
+        facebook: mdiFacebook,
+        google: mdiGoogle
       },
       sets: {
         mdi,
