@@ -15,28 +15,24 @@
  
 const { $gsap: gsap, $ScrollSmoother: ScrollSmoother } = useNuxtApp();
 const drawer = ref(false);
-const items = ref([
-  {
-    icon: "mdi-chart-bubble",
-    title: "Services",
-    to: "/",
-  },
-  {
-    icon: "",
-    title: "Portfolio",
-    to: "/portfolio",
-  },
-  {
-    icon: "",
-    title: "Blogs",
-    to: "/blogs",
-  },
-  {
-    icon: "",
-    title: "Contact",
-    to: "/contact",
-  },
-]);
+const items = [
+        {
+          title: 'Services',
+          to: '/',
+        },
+        {
+          title: 'Portfolio',
+          to: '/portfolio',
+        },
+        {
+          title: 'Blogs',
+          to: '/blogs',
+        },
+        {
+          title: 'Contact',
+          to: '/contact',
+        },
+      ]
 
 onMounted(() => {
     // scrollSmootherInit();

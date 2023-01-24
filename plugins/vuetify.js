@@ -22,6 +22,7 @@ import {
   mdiPhone,
   mdiEmail,
   mdiClose,
+  mdiLinkedin,
 } from "@mdi/js";
 
 import "vuetify/styles";
@@ -76,6 +77,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         instagram: mdiInstagram,
         facebook: mdiFacebook,
         google: mdiGoogle,
+        linkedin:mdiLinkedin,
       },
       sets: {
         mdi,
