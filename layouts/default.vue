@@ -1,21 +1,55 @@
 <template>
-   <v-app>
-    <div><h3>hello world</h3></div>
+  <v-app dark>
+    <NavigationBase :nav-items="items" />
     <v-main>
-        <slot/>
+      <slot />
     </v-main>
-
-   </v-app>
-
-
+    <LazyFooter :nav-items="items" />
+    <v-footer absolute app>
+      <span>&copy; {{ new Date().getFullYear() }}</span>
+    </v-footer>
+  </v-app>
 </template>
 
-<script>
-export default {
+<script setup>
+ 
+const { $gsap: gsap, $ScrollSmoother: ScrollSmoother } = useNuxtApp();
+const drawer = ref(false);
+const items = ref([
+  {
+    icon: "mdi-chart-bubble",
+    title: "Services",
+    to: "/",
+  },
+  {
+    icon: "",
+    title: "Portfolio",
+    to: "/portfolio",
+  },
+  {
+    icon: "",
+    title: "Blogs",
+    to: "/blogs",
+  },
+  {
+    icon: "",
+    title: "Contact",
+    to: "/contact",
+  },
+]);
 
+onMounted(() => {
+    // scrollSmootherInit();
+})
+
+function scrollSmootherInit() {
+  ScrollSmoother.create({
+    content: "#content",
+    wrapper: "#wrapper",
+    smooth: 1,
+    effects: true,
+  });
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

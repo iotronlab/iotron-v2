@@ -1,6 +1,6 @@
 import { createVuetify } from "vuetify";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
-import {} from "@mdi/js";
+import { mdiMenu, mdiPhone, mdiEmail, mdiClose } from "@mdi/js";
 
 import "vuetify/styles";
 
@@ -32,6 +32,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       defaultSet: "mdi",
       aliases: {
         ...aliases,
+        menu: mdiMenu,
+        close: mdiClose,
+        call: mdiPhone,
+        email: mdiEmail,
       },
       sets: {
         mdi,
