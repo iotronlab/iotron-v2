@@ -861,7 +861,9 @@
 </template>
 
 <script setup>
-const { $gsap: gsap, $ScrollSmoother: ScrollSmoother } = useNuxtApp();
+ 
+const { $gsap: gsap, $DrawSVGPlugin: DrawSVGPlugin } = useNuxtApp();
+ 
 
 const localTl = ref(null);
 
@@ -870,8 +872,6 @@ onMounted(() => {
 });
 
 function setAnimation() {
-   
-
   const world = document.querySelectorAll("#earth path");
   const sky = document.querySelectorAll("#sky path");
   const sat = document.querySelectorAll("#sky circle");
@@ -1003,7 +1003,7 @@ function setAnimation() {
     return tl;
   }
 
-   localTl.value = gsap
+  localTl.value = gsap
     .timeline({ defaults: { duration: 3 } })
     .add(revealAnime())
     .add(glowAnime)
@@ -1062,12 +1062,12 @@ function setAnimation() {
   // })
 }
 function mouseover() {
-  if ( localTl.value != null) {
+  if (localTl.value != null) {
     // this.localTl.timeScale(0.8)
   }
 }
 function mouseleave() {
-  if ( localTl.value != null) {
+  if (localTl.value != null) {
     //  this.localTl.timeScale(1)
   }
 }

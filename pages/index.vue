@@ -8,6 +8,8 @@
         <HomeAnimation />
       </v-col>
     </v-row>
+
+    <LazyHomeDevices />
   </v-container>
 </template>
 

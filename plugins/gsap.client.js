@@ -2,8 +2,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Draggable } from "gsap/Draggable";
-// import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+// import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 export default defineNuxtPlugin((nuxtApp) => {
   if (process.client) {
@@ -13,7 +13,6 @@ export default defineNuxtPlugin((nuxtApp) => {
       Draggable,
       // ScrollSmoother,
       DrawSVGPlugin
-   
     );
   }
 
@@ -22,7 +21,7 @@ export default defineNuxtPlugin((nuxtApp) => {
       gsap,
       Draggable,
       ScrollTrigger,
-    DrawSVGPlugin
+      DrawSVGPlugin,
       // ScrollSmoother
     },
   };
