@@ -1,32 +1,12 @@
 <template>
   <section>
-    <v-dialog
-      v-model="drawer"
-      fullscreen
-      hide-overlay
-      app
-      class="hidden-lg-and-up"
-    >
+    <v-dialog v-model="drawer" fullscreen hide-overlay app class="hidden-lg-and-up">
       <v-sheet height="100%">
-        <v-btn
-          fab
-          icon
-          fixed
-          right
-          aria-label="close-button"
-          @click.stop="drawer = !drawer"
-        >
+        <v-btn fab icon fixed right aria-label="close-button" @click.stop="drawer = !drawer">
           <v-icon x-large icon="$close"> </v-icon>
         </v-btn>
         <v-list class="pt-16">
-          <v-list-item
-            v-for="(item, i) in navItems"
-            :key="i"
-            :to="item.to"
-            router
-            exact
-            @click.stop="drawer = !drawer"
-          >
+          <v-list-item v-for="(item, i) in navItems" :key="i" :to="item.to" router exact @click.stop="drawer = !drawer">
             <v-list-item-action>
               <v-icon>{{ item.icon }} </v-icon>
             </v-list-item-action>
@@ -47,30 +27,18 @@
       </NuxtLink>
       <v-spacer></v-spacer>
 
-      <v-app-bar-nav-icon
-        aria-label="nav-button"
-        class="hidden-lg-and-up"
-        @click.stop="drawer = !drawer"
-      >
+      <v-app-bar-nav-icon aria-label="nav-button" class="hidden-lg-and-up" @click.stop="drawer = !drawer">
         <v-icon x-large icon="$menu"></v-icon>
       </v-app-bar-nav-icon>
 
       <v-row no-gutters justify="end" align="center" class="hidden-md-and-down">
-        <v-switch
-          v-model="$vuetify.theme.dark"
-          inset
-          label="Dark"
-          hide-details
-          class="mr-4 btn-anime"
-        ></v-switch>
+        <v-switch v-model="$vuetify.theme.dark" inset label="Dark" hide-details class="mr-4 btn-anime"></v-switch>
 
         <div v-for="(item, i) in navItems" :key="i">
           <v-btn :to="item.to" class="btn-anime">
             {{ item.title }}
           </v-btn>
         </div>
-
-        >
       </v-row>
     </v-app-bar>
   </section>

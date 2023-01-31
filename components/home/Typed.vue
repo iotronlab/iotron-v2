@@ -1,10 +1,7 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <section class="text-center">
-      <h1
-        class="text-h3 text-md-h1 font-weight-black"
-        style="position: relative"
-      >
+      <h1 class="text-h3 text-md-h1 font-weight-black" style="position: relative">
         <span>Progressive</span> <span> Web Agency~</span>
       </h1>
 
@@ -12,16 +9,9 @@
         <span class="text-span">design </span>
         <span> <sup>feat.</sup></span>
         <br />
-        <span class="text-h3 text-md-h1 font-weight-black mt-2"
-          >Development.</span
-        >
+        <span class="text-h3 text-md-h1 font-weight-black mt-2">Development.</span>
       </h1>
-      <h1 class="text-h4 text-sm-h3 mt-10 mt-lg-0">
-        <span> <b class="accent--text">ideas</b> that</span>
-        <br />
-        <span class="font-weight-black accent--text landing-text">connect</span>
-        <!-- <div class="text primary--text"></div> -->
-      </h1>
+
     </section>
   </v-container>
 </template>
@@ -42,7 +32,7 @@ function revealAnimations() {
 }
 
 function typeLandingText() {
-  
+
 
   // gsap.to('.cursor', {
   //   opacity: 0,
@@ -97,13 +87,11 @@ function typeLandingText() {
   font-weight: 400;
   font-size: 8rem;
   font-display: swap;
-  background: linear-gradient(
-    -110deg,
-    #02f4c8 10%,
-    #41bbf6 30%,
-    #41bbf6 70%,
-    #02f4c8 80%
-  );
+  background: linear-gradient(-110deg,
+      #02f4c8 10%,
+      #41bbf6 30%,
+      #41bbf6 70%,
+      #02f4c8 80%);
   color: transparent;
   background-clip: text;
   padding-right: 1.5rem;

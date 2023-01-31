@@ -12,30 +12,30 @@
 </template>
 
 <script setup>
- 
+
 const { $gsap: gsap, $ScrollSmoother: ScrollSmoother } = useNuxtApp();
 const drawer = ref(false);
 const items = [
-        {
-          title: 'Services',
-          to: '/',
-        },
-        {
-          title: 'Portfolio',
-          to: '/portfolio',
-        },
-        {
-          title: 'Blogs',
-          to: '/blogs',
-        },
-        {
-          title: 'Contact',
-          to: '/contact',
-        },
-      ]
+  {
+    title: 'Services',
+    to: '/',
+  },
+  {
+    title: 'Portfolio',
+    to: '/portfolio',
+  },
+  {
+    title: 'Blogs',
+    to: '/blogs',
+  },
+  {
+    title: 'Contact',
+    to: '/contact',
+  },
+]
 
 onMounted(() => {
-    // scrollSmootherInit();
+  // scrollSmootherInit();
 })
 
 function scrollSmootherInit() {
@@ -48,4 +48,6 @@ function scrollSmootherInit() {
 }
 </script>
 
-<style></style>
+<style>
+
+</style>
