@@ -8,15 +8,49 @@
         <v-row no-gutters class="text-center mt-6">
             <v-col v-for="(item, i) in services" :key="i" cols="12" md="4" lg="3" class="pa-1">
 
-
                 <h2 class="text-h5 primary-text font-weight-black my-4">
                     {{ item.title }}
                 </h2>
-
             </v-col>
+            <v-divider class="my-2" />
+            <v-row no-gutters justify="center">
+                <v-col v-for="(item, i) in services" :key="i" cols="12" sm="6" class="pa-1">
+                    <v-card rounded="xl">
+                        <v-card-title
+                            class="text-h5 font-weight-black primary--text"
+                            style="word-break: normal"
+                        >
+                            {{ item.title }}
+                        </v-card-title>
+                        <v-card-text class="text-body-1">
+                            <div v-html="item.text"></div>
+                            <ul class="font-weight-bold pa-2 mt-3 ml-3">
+                            <li v-for="(service, i) in item.services" :key="i" class="text-left ml-4">
+                                {{ service }}
+                            </li>
+                            </ul>
+
+
+                            <!-- <v-btn
+                                class="mt-6"
+                                rounded
+                                color="accent"
+                                :class="{ 'on-hover': hover }"
+                                outlined
+                                >
+                                <v-icon left icon="$phone"> </v-icon> Drop an inquiry
+                                </v-btn> -->
+                            <v-btn class="nucard mt-4" text color="accent" rounded elevation="[18, 18, 18]"
+                            >Get a Quote</v-btn
+                            >
+                        </v-card-text>
+                    </v-card>
+                </v-col>
+            </v-row>
         </v-row>
     </section>
 </template>
+
 
 <script setup>
 const services = [

@@ -13,14 +13,14 @@
                 </h5>
                 <br />
                 <p>
-                    <a href="tel:+91 7439 790 770">
+                    <a href="tel:+91 7439 790 770" class="text-decoration-none">
                         <v-icon icon="$phone" class="mr-2"></v-icon>
                         +91 9046632101
                     </a>
                 </p>
                 <p>
-                    <a href="mailto:contactus@iaa.org.in">
-                        <v-icon icon="$email" class="mr-2"></v-icon>
+                    <a href="mailto:contactus@iaa.org.in" class="text-decoration-none">
+                        <v-icon icon="$email" class="mr-2 "></v-icon>
                         contactus@iotron.co
                     </a>
                 </p>
@@ -42,12 +42,12 @@
             </v-col>
             <v-col cols="12" lg="3" class="pa-2">
                 <p v-for="(link, i) in navItems" :key="i" class="subtitle-1 mb-1">
-                <NuxtLink :to="link.to">{{ link.title }}</NuxtLink>
+                <NuxtLink :to="link.to" class="text-decoration-none">{{ link.title }}</NuxtLink>
                 </p>
             </v-col>
             <v-col cols="12" lg="3">
                 <p>
-                <NuxtLink to="/verify"> Verify Certificates </NuxtLink>
+                <NuxtLink to="/verify" class="text-decoration-none"> Verify Certificates </NuxtLink>
                 </p>
                 <section>
                 <p class="caption my-2">Policies</p>
