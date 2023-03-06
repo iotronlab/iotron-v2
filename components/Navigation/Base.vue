@@ -18,7 +18,7 @@
       </v-sheet>
     </v-dialog>
 
-    <v-app-bar fixed app flat>
+    <v-app-bar fixed app color="transparent">
       <!-- <nuxt-link :to="{ path: '/' }">
         <v-img src="/logo.webp" max-width="220" contain />
       </nuxt-link> -->
