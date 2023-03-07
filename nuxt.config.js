@@ -25,9 +25,7 @@ export default defineNuxtConfig({
     async (options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) =>
         config.plugins.push(
-          vuetify({
-            styles: { configFile: 'assets/css/settings.scss' },
-          })
+          vuetify()
         )
       )
     },
@@ -39,19 +37,14 @@ export default defineNuxtConfig({
     // Keys within public are also exposed client-side
     public: {
       apiBase: 'http://localhost:8000/',
-      apiVersion: 'http://localhost:8000/api/v1/',
+      apiVersion: 'http://localhost:8000/api/',
       sanctumAuth: {
         baseUrl: 'http://localhost:8000',
         endpoints: {
           csrf: '/sanctum/csrf-cookie',
-          login: '/api/v1/login',
-          logout: '/api/v1/logout',
-          user: '/api/v1/user',
         },
         redirects: {
           home: '/',
-          login: '/auth/sign-in',
-          logout: '/',
         },
       },
     },
