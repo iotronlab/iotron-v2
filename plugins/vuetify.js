@@ -23,6 +23,9 @@ import {
   mdiEmail,
   mdiClose,
   mdiLinkedin,
+  mdiEye,
+  mdiFilterMenuOutline,
+  mdiShareVariantOutline
 } from "@mdi/js";
 
 import "vuetify/styles";
@@ -78,6 +81,9 @@ export default defineNuxtPlugin((nuxtApp) => {
         facebook: mdiFacebook,
         google: mdiGoogle,
         linkedin:mdiLinkedin,
+        eye: mdiEye,
+        filterMenuOutline: mdiFilterMenuOutline,
+        share: mdiShareVariantOutline
       },
       sets: {
         mdi,
