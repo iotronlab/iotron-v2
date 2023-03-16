@@ -1,57 +1,27 @@
 <template>
-
-    <section>
-        <h2 class="text-h4 quote" style="overflow: hidden">
-
-            Our Solutions cover the diverse needs of a Modern Business.
+  <div class="rounded-lg  overflow-hidden shadow divide-y-2 divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px">
+    <div v-for="(service, serviceIdx) in services" :key="serviceIdx" :class="[serviceIdx === 0 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none' : '', serviceIdx === 1 ? 'sm:rounded-tr-lg' : '', serviceIdx === services.length - 2 ? 'sm:rounded-bl-lg' : '', serviceIdx === services.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '', 'relative group p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500']">
+      <div class="mt-8">
+        <h2 class="text-lg font-medium">
+          <div class="focus:outline-none">
+            <span class="absolute inset-0 " aria-hidden="true">
+                <b>{{ service.title }}</b>
+            </span>
+          </div>
         </h2>
-        <v-row no-gutters class="text-center mt-6">
-            <v-col v-for="(item, i) in services" :key="i" cols="12" md="4" lg="3" class="pa-1">
-
-                <h2 class="text-h5 primary-text font-weight-black my-4">
-                    {{ item.title }}
-                </h2>
-            </v-col>
-            <v-divider class="my-2" />
-            <v-row no-gutters justify="center">
-                <v-col v-for="(item, i) in services" :key="i" cols="12" sm="6" class="pa-1">
-                    <v-card rounded="xl">
-                        <v-card-title
-                            class="text-h5 font-weight-black primary--text"
-                            style="word-break: normal"
-                        >
-                            {{ item.title }}
-                        </v-card-title>
-                        <v-card-text class="text-body-1">
-                            <div v-html="item.text"></div>
-                            <ul class="font-weight-bold pa-2 mt-3 ml-3">
-                            <li v-for="(service, i) in item.services" :key="i" class="text-left ml-4">
-                                {{ service }}
-                            </li>
-                            </ul>
-
-
-                            <!-- <v-btn
-                                class="mt-6"
-                                rounded
-                                color="accent"
-                                :class="{ 'on-hover': hover }"
-                                outlined
-                                >
-                                <v-icon left icon="$phone"> </v-icon> Drop an inquiry
-                                </v-btn> -->
-                            <v-btn class="nucard mt-4" text color="accent" rounded elevation="[18, 18, 18]"
-                            >Get a Quote</v-btn
-                            >
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-            </v-row>
-        </v-row>
-    </section>
+        <div class="mt-2 text-sm" v-html="service.text"></div>
+        <div class="mt-2 text-sm">
+            <ul class="font-weight-bold pa-2 mt-3 ml-3">
+                <li v-for="(sub, i) in service.services" :key="i" class="text-left ml-4">
+                    {{ sub }}
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="mx-8 hover:cursor-pointer inline-flex items-start px-6 py-3 border shadow-lg text-base font-medium rounded-md text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Get a Quote</button>
+      </div>
+    </div>
+  </div>
 </template>
-
-
 <script setup>
 const services = [
     {
