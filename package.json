@@ -15,9 +15,11 @@
     "vue": "latest"
   },
   "dependencies": {
+    "@headlessui/vue": "^0.3.0",
     "@mdi/js": "^7.1.96",
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "gsap": "npm:@gsap/shockingly@^3.11.4",
+    "heroicons": "^2.0.16",
     "sass": "^1.57.1",
     "vite-plugin-vuetify": "^1.0.1",
     "vuetify": "^3.1.1"
