@@ -15,7 +15,8 @@
     "vue": "latest"
   },
   "dependencies": {
-    "@headlessui/vue": "^0.3.0",
+    "@headlessui/vue": "^0.0.0-insiders.d55c77e",
+    "@heroicons/vue": "^2.0.16",
     "@mdi/js": "^7.1.96",
     "@nuxtjs/google-fonts": "^3.0.0-1",
     "gsap": "npm:@gsap/shockingly@^3.11.4",

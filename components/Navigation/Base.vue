@@ -1,4 +1,5 @@
 <template>
+<div>
     <!-- For desktop -->
   <header class="sticky top-0 z-10 w-full bg-inherit">
     <nav
@@ -6,18 +7,26 @@
       aria-label="navigation"
     >
       <NuxtLink to="/">
-        <img class="hidden h-12 w-auto lg:block" src="/logo.webp" alt="" />
-       <!-- <img class="h-10 w-auto lg:hidden" src="/icon.png" alt="" /> -->
+        <img class="hidden h-12 w-auto lg:block" src="/logo.webp" alt="Logo" />
+       <img class="h-10 w-auto lg:hidden" src="/icon.png" alt="" /> 
       </NuxtLink>
-      <div class="flex items-center gap-1 font-bold">
+      <div class="flex items-center justify-center gap-1 font-bold">
         <NuxtLink
           v-for="(item, index) in items"
           :key="index"
           :to="item.to"
-          class="relative hidden py-2 px-4 uppercase tracking-widest transition duration-300 ease-in-out before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-center before:scale-x-0 before:bg-fuchsia-600 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-fuchsia-300 before:hover:scale-x-100 active:text-fuchsia-400 lg:block"
+          class="relative hidden py-2 px-4 uppercase tracking-widest transition duration-300 ease-in-out before:absolute before:bottom-0 before:left-0 before:block before:h-[2px] before:w-full before:origin-center before:scale-x-0 before:bg-fuchsia-800 before:transition before:duration-300 before:ease-in-out before:content-[''] hover:text-fuchsia-300 before:hover:scale-x-100 active:text-fuchsia-400 lg:block"
         >
           {{ item.title }}
         </NuxtLink>
+        <button type="button" class="text-primary dark:text-white lg:hidden" :show="sidebarOpen"
+          @click="sidebarOpen = true">
+          <span class="sr-only">Open sidebar</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="h-8 w-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
       </div>
     </nav>
   </header>
@@ -75,7 +84,7 @@
                         @click="sidebarOpen = false"
                       >
                         <span class="sr-only">Close panel</span>
-                        <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+                      <XMarkIcon class="h-6 w-6" aria-hidden="true" />
                       </button>
                     </div>
                   </TransitionChild>
@@ -97,50 +106,10 @@
           </div>
         </div>
       </Dialog>
-    </TransitionRoot>
+    </TransitionRoot> 
   </div>
+</div>
 </template>
-<!-- <section>
-  <v-dialog v-model="drawer" fullscreen hide-overlay app class="hidden-lg-and-up">
-    <v-sheet height="100%">
-      <v-btn fab icon fixed right aria-label="close-button" @click.stop="drawer = !drawer">
-        <v-icon x-large icon="$close"> </v-icon>
-      </v-btn>
-      <v-list class="pt-16">
-        <v-list-item v-for="(item, i) in navItems" :key="i" :to="item.to" router exact @click.stop="drawer = !drawer">
-          <v-list-item-action>
-            <v-icon>{{ item.icon }} </v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title v-text="item.title" />
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-sheet>
-  </v-dialog>
-
-  <v-app-bar fixed app color="transparent">
-    <NuxtLink to="/">
-      <v-img src="/logo.webp" width="160" alt="logo"></v-img>
-    </NuxtLink>
-    <v-spacer></v-spacer>
-
-    <v-app-bar-nav-icon aria-label="nav-button" class="hidden-lg-and-up" @click.stop="drawer = !drawer">
-      <v-icon x-large icon="$menu"></v-icon>
-    </v-app-bar-nav-icon>
-
-    <v-row no-gutters justify="end" align="center" class="hidden-md-and-down">
-      <v-switch v-model="$vuetify.theme.dark" inset label="Dark" hide-details class="mr-4 btn-anime"></v-switch>
-
-      <div v-for="(item, i) in navItems" :key="i">
-        <v-btn :to="item.to" class="btn-anime">
-          {{ item.title }}
-        </v-btn>
-      </div>
-    </v-row>
-  </v-app-bar>
-</section> -->
-
 <script setup>
 import {
   Dialog,
@@ -160,7 +129,7 @@ const props = defineProps({
   },
 });
 
-const drawer = ref(false);
+const sidebarOpen = ref(false);
 
 const items = ref([
   {

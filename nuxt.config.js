@@ -60,7 +60,7 @@ export default defineNuxtConfig({
   },
 
   build: {
-    transpile: ['vuetify', 'gsap'],
+    transpile: ['vuetify', 'gsap', '@headlessui/vue'],
     // analyze: {
     //   analyzerMode: 'static',
     // },
